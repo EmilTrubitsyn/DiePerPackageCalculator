@@ -1,5 +1,5 @@
 import math
-
+#need to take
 def log2_by_case(case_name: str, TotalCapacity: float, TotalDieDensity: float) -> float:
     match case_name.upper():
         #if we choose module type CAMM2
@@ -20,6 +20,8 @@ def log2_by_case(case_name: str, TotalCapacity: float, TotalDieDensity: float) -
 #Calculate the DDP, QDP, ODP based on the sum value
 def ddp(sum: int) -> str:
     match int(sum):
+        case val if val < 1:
+            return "DDP"
         case 1:
             return "DDP"
         case 2:
@@ -34,7 +36,7 @@ def ddp(sum: int) -> str:
 
 
 def main() -> None:
-    sum_value = log2_by_case("COMPONENT", 24, 16)
+    sum_value = log2_by_case("COMPONENT", 4, 32)
     print(sum_value)
     print(ddp(sum_value))
 
